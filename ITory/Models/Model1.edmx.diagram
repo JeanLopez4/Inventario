@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc421a34ff8a4048b5f14bf94f5262f6" Name="Diagram1">
+        <EntityTypeShape EntityType="InventarioDBModel.Almacen" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioDBModel.AlmacenxExistencia" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioDBModel.Articulo" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioDBModel.Asiento_Contable" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioDBModel.Tipo_Inventario" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioDBModel.Transaccion" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="InventarioDBModel.FK_AlmacenxExistencia_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioDBModel.FK_AlmacenxExistencia_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioDBModel.FK_Articulo_Tipo_Inventario" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioDBModel.FK_Transaccion_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioDBModel.FK_Asiento_Contable_Tipo_Inventario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

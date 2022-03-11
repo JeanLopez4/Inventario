@@ -1,0 +1,86 @@
+﻿@model IEnumerable<ITory.Models.Articulo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+    <div class="card ">
+        <div class="card-header container-fluid text-white" style="background-color:#ffb034">
+            <div class="row">
+                <div class="col-md-9">
+                    <h3>Articulos</h3>
+                </div>
+                <div class="col-md" style="padding-top:10px;">
+                    <div class="float-right">
+                        <form method="get" class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                            <input class="form-control form-control-sm ml-3 w-75" name="Criterio" id="Criterio" type="text" placeholder="Search"
+                                   aria-label="Search">
+                        </form>
+                        </div>
+                    </div>
+                    <div class="col-md" style="padding-top:10px;">
+                        <div class="float-right">
+
+                            <a class="btn btn-light" href="@Url.Action("Create", "Articulo")"><i class="glyphicon glyphicon-plus"></i>Añadir</a>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Existencia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Costo_Unitario)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Estado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tipo_Inventario.Nombre)
+                    </th>
+                    <th>
+                        Acciones
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Existencia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Costo_Unitario)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Estado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tipo_Inventario.Nombre)
+                        </td>
+                        <td>
+                            <a class="btn btn-primary btn-sm " title="Editar" href="@Url.Action("Edit", "Articulo", new { id=item.idArticulo})"><i class="glyphicon glyphicon-edit"></i> </a>
+                            <a class="btn btn-info btn-sm " title="Detalles" href="@Url.Action("Details", "Articulo", new { id=item.idArticulo})"><i class="glyphicon glyphicon-eye-open"></i> </a>
+                            <a class="btn btn-danger btn-sm " title="Eliminar" href="@Url.Action("Delete", "Articulo", new { id=item.idArticulo})"><i class="glyphicon glyphicon-trash"></i> </a>
+                        </td>
+                    </tr>
+                }
+            </table>
+</div>
+    </div>
+    
+
+   
+
+

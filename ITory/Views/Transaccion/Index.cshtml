@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ITory.Models.Transaccion>
+
+@{
+    ViewBag.Title = "Transacciones";
+}
+
+<div class="card ">
+    <div class="card-header container-fluid text-white" style="background-color:#ffb034">
+        <div class="row">
+            <div class="col-md-9">
+                <h3>Transacciones</h3>
+            </div>
+            <div class="col-md" style="padding-top:10px;">
+                <div class="float-right">
+                    <form method="get" class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                        <input class="form-control form-control-sm ml-3 w-75" name="Criterio" id="Criterio" type="text" placeholder="Search"
+                               aria-label="Search">
+                    </form>
+                </div>
+            </div>
+            <div class="col-md" style="padding-top:10px;">
+                <div class="float-right">
+
+                    <a class="btn btn-light" href="@Url.Action("Create", "Transaccion")"><i class="glyphicon glyphicon-plus"></i>Añadir</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-hover">
+            <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Articulo.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Monto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Articulo.Nombre)
+        </td>
+        <td>
+            <a class="btn btn-primary btn-sm " title="Editar" href="@Url.Action("Edit", "Transaccion", new { id=item.idTransaccion})"><i class="glyphicon glyphicon-edit"></i> </a>
+                        <a class="btn btn-info btn-sm " title="Detalles" href="@Url.Action("Details", "Transaccion", new { id = item.idTransaccion })"><i class="glyphicon glyphicon-eye-open"></i> </a>
+                        <a class="btn btn-danger btn-sm " title="Eliminar" href="@Url.Action("Delete", "Transaccion", new { id=item.idTransaccion})"><i class="glyphicon glyphicon-trash"></i> </a>
+        </td>
+    </tr>
+}
+
+</table>
+
+</div>
+</div>

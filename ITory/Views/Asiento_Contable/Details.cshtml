@@ -1,0 +1,74 @@
+﻿@model ITory.Models.Asiento_Contable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Asiento_Contable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuenta_Contable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuenta_Contable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_Movimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_Movimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Asiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Asiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Monto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_Inventario.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_Inventario.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idAsiento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
